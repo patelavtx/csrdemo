@@ -32,8 +32,8 @@ resource "aviatrix_transit_external_device_conn" "pubConns" {
   direct_connect    = false
   remote_gateway_ip = var.cloud_type == "aws" ? aws_eip.csr_public_eip[0].public_ip : azurerm_public_ip.csr_public_ip[0].ip_address
   pre_shared_key    = "aviatrix"
-  local_tunnel_cidr         = "10.10.10.2/30,10.10.11.2/30"
-  remote_tunnel_cidr        = "10.10.10.1/30,10.10.11.1/30"
+  #local_tunnel_cidr         = "10.10.10.2/30,10.10.11.2/30"
+  #remote_tunnel_cidr        = "10.10.10.1/30,10.10.11.1/30"
 }
 
 # Create private S2C+BGP Connections to transit
